@@ -38,6 +38,29 @@ namespace OnlyPaes
                 //Colocar os valores dos campos nos atributos do usuario:
                 usuario.Email =txbEmail.Text;
                 usuario.senha =txbSenha.Text;
+
+                // Tabela que vai receber o resultado do SELEC (Logar)
+                DataTable resultado = usuario.Logar();
+
+                // Verificar se acertou o email e senha
+                if (resultado.Rows.Count == 0)
+                {
+                    MessageBox.Show("E-mail e/ou senha invalidos!", "Erro!",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                    // Armazenar as infos vindas do bd no objeto "usuario":
+                    usuario.Id = int.Parse(resultado.Rows[0]["id"].ToString());
+                    usuario.NomeCompleto = resultado.Rows[0]["Nome_completo"].ToString();
+
+                    // Mudar para o menu principal:
+                    MenuPrincipal menuPrincipal = new MenuPrincipal(usuario);
+                    Hide(); // Esconder a janela atual
+                    menuPrincipal.ShowDialog(); // Mostrar o menuprincipal
+
+                    Show(); //Mostrar a tela de login ao sair do menu principal
+                }
             }
         }
     }

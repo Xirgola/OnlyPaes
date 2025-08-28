@@ -12,7 +12,7 @@ namespace OnlyPaes.Model
     public class Usuario
     {
         public int Id { get; set; }
-        public string NamoCompleto { get; set; }
+        public string NomeCompleto { get; set; }
         public string Email { get; set; }
         public string senha { get; set; }
    
@@ -28,9 +28,12 @@ namespace OnlyPaes.Model
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
 
+            // Obter o hash da senha: 
+            string senhahash = EasyEncryption.SHA.ComputeSHA256Hash(senha);
+
             // Substituir os caracteres coringas (@)
             cmd.Parameters.AddWithValue("@email", Email);
-            cmd.Parameters.AddWithValue("@senha", senha);// ainda falta obter o hash!!
+            cmd.Parameters.AddWithValue("@senha", senhahash);// ainda falta obter o hash!!
 
             cmd.Prepare();
             // Declarar tabela que irá receber o resultado:

@@ -35,8 +35,6 @@
             this.lblOla = new System.Windows.Forms.Label();
             this.btnProdutos = new System.Windows.Forms.Button();
             this.btnComandas = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblMenu
@@ -45,8 +43,8 @@
             this.lblMenu.BackColor = System.Drawing.Color.Transparent;
             this.lblMenu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.lblMenu.Font = new System.Drawing.Font("Mongolian Baiti", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenu.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(39)))));
-            this.lblMenu.Location = new System.Drawing.Point(57, 27);
+            this.lblMenu.ForeColor = System.Drawing.Color.Peru;
+            this.lblMenu.Location = new System.Drawing.Point(139, 9);
             this.lblMenu.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblMenu.Name = "lblMenu";
             this.lblMenu.Size = new System.Drawing.Size(326, 31);
@@ -57,10 +55,10 @@
             // 
             this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
             this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(39)))));
-            this.btnCaixa.Location = new System.Drawing.Point(467, 135);
+            this.btnCaixa.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnCaixa.Location = new System.Drawing.Point(70, 169);
             this.btnCaixa.Name = "btnCaixa";
-            this.btnCaixa.Size = new System.Drawing.Size(162, 119);
+            this.btnCaixa.Size = new System.Drawing.Size(519, 50);
             this.btnCaixa.TabIndex = 3;
             this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
@@ -69,10 +67,10 @@
             // 
             this.btnUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(39)))));
-            this.btnUsuario.Location = new System.Drawing.Point(467, 284);
+            this.btnUsuario.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnUsuario.Location = new System.Drawing.Point(70, 225);
             this.btnUsuario.Name = "btnUsuario";
-            this.btnUsuario.Size = new System.Drawing.Size(162, 106);
+            this.btnUsuario.Size = new System.Drawing.Size(519, 50);
             this.btnUsuario.TabIndex = 4;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
@@ -82,8 +80,8 @@
             this.lblOla.AutoSize = true;
             this.lblOla.BackColor = System.Drawing.Color.Transparent;
             this.lblOla.Font = new System.Drawing.Font("Mongolian Baiti", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblOla.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(39)))));
-            this.lblOla.Location = new System.Drawing.Point(42, 95);
+            this.lblOla.ForeColor = System.Drawing.Color.SandyBrown;
+            this.lblOla.Location = new System.Drawing.Point(78, 73);
             this.lblOla.Name = "lblOla";
             this.lblOla.Size = new System.Drawing.Size(490, 23);
             this.lblOla.TabIndex = 5;
@@ -93,10 +91,10 @@
             // 
             this.btnProdutos.BackColor = System.Drawing.Color.Transparent;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnProdutos.Location = new System.Drawing.Point(46, 284);
+            this.btnProdutos.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnProdutos.Location = new System.Drawing.Point(70, 281);
             this.btnProdutos.Name = "btnProdutos";
-            this.btnProdutos.Size = new System.Drawing.Size(158, 106);
+            this.btnProdutos.Size = new System.Drawing.Size(519, 50);
             this.btnProdutos.TabIndex = 6;
             this.btnProdutos.Text = "produtos";
             this.btnProdutos.UseVisualStyleBackColor = false;
@@ -104,24 +102,16 @@
             // btnComandas
             // 
             this.btnComandas.BackColor = System.Drawing.Color.Transparent;
+            this.btnComandas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnComandas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComandas.Location = new System.Drawing.Point(46, 135);
+            this.btnComandas.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnComandas.Location = new System.Drawing.Point(70, 113);
             this.btnComandas.Name = "btnComandas";
-            this.btnComandas.Size = new System.Drawing.Size(158, 119);
+            this.btnComandas.Size = new System.Drawing.Size(519, 50);
             this.btnComandas.TabIndex = 7;
             this.btnComandas.Text = "Comandas";
             this.btnComandas.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
-            this.pictureBox1.Image = global::OnlyPaes.Properties.Resources.ChatGPT_Image_27_de_ago__de_2025__20_30_36;
-            this.pictureBox1.Location = new System.Drawing.Point(448, 12);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(181, 80);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 8;
-            this.pictureBox1.TabStop = false;
+            this.btnComandas.Click += new System.EventHandler(this.btnComandas_Click);
             // 
             // MenuPrincipal
             // 
@@ -129,10 +119,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.InfoText;
-            this.BackgroundImage = global::OnlyPaes.Properties.Resources.ChatGPT_Image_27_de_ago__de_2025__21_52_05;
+            this.BackgroundImage = global::OnlyPaes.Properties.Resources.ChatGPT_Image_28_de_ago__de_2025__19_35_48;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(656, 440);
-            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btnComandas);
             this.Controls.Add(this.btnProdutos);
             this.Controls.Add(this.lblOla);
@@ -141,13 +130,12 @@
             this.Controls.Add(this.lblMenu);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "MenuPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MenuPrincipal";
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -161,6 +149,5 @@
         private System.Windows.Forms.Label lblOla;
         private System.Windows.Forms.Button btnProdutos;
         private System.Windows.Forms.Button btnComandas;
-        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

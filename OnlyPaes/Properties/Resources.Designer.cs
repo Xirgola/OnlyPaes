@@ -83,6 +83,16 @@ namespace OnlyPaes.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ChatGPT_Image_28_de_ago__de_2025__19_35_48 {
+            get {
+                object obj = ResourceManager.GetObject("ChatGPT Image 28 de ago. de 2025, 19_35_48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IMG_2026 {
             get {
                 object obj = ResourceManager.GetObject("IMG_2026", resourceCulture);
