@@ -58,7 +58,7 @@
             this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
             this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCaixa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(39)))));
-            this.btnCaixa.Location = new System.Drawing.Point(467, 131);
+            this.btnCaixa.Location = new System.Drawing.Point(467, 135);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(162, 119);
             this.btnCaixa.TabIndex = 3;
@@ -70,7 +70,7 @@
             this.btnUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnUsuario.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(46)))), ((int)(((byte)(39)))));
-            this.btnUsuario.Location = new System.Drawing.Point(467, 298);
+            this.btnUsuario.Location = new System.Drawing.Point(467, 284);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(162, 106);
             this.btnUsuario.TabIndex = 4;
@@ -94,7 +94,7 @@
             this.btnProdutos.BackColor = System.Drawing.Color.Transparent;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnProdutos.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnProdutos.Location = new System.Drawing.Point(12, 289);
+            this.btnProdutos.Location = new System.Drawing.Point(46, 284);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(158, 106);
             this.btnProdutos.TabIndex = 6;
@@ -105,7 +105,7 @@
             // 
             this.btnComandas.BackColor = System.Drawing.Color.Transparent;
             this.btnComandas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComandas.Location = new System.Drawing.Point(12, 131);
+            this.btnComandas.Location = new System.Drawing.Point(46, 135);
             this.btnComandas.Name = "btnComandas";
             this.btnComandas.Size = new System.Drawing.Size(158, 119);
             this.btnComandas.TabIndex = 7;
