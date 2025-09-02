@@ -13,18 +13,24 @@ namespace OnlyPaes
     public partial class MenuPrincipal : Form
     {
         // Variaveis globais
-        Model.Usuario usario = new Model.Usuario();
+        Model.Usuario usuario = new Model.Usuario();
 
         public MenuPrincipal(Model.Usuario usuario)
         {
             InitializeComponent();
-            this.usario = usuario;
+            this.usuario = usuario;
             lblOla.Text = $"Ola {usuario.NomeCompleto}!!! Escolha uma opção abaixo:"; 
         }
 
         private void btnComandas_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            FormUsuario formUsuario = new FormUsuario(usuario);
+            formUsuario.ShowDialog(); // Mostrar o form
         }
     }
 }

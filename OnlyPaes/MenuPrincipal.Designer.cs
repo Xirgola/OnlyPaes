@@ -55,8 +55,8 @@
             // 
             this.btnCaixa.BackColor = System.Drawing.Color.Transparent;
             this.btnCaixa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCaixa.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnCaixa.Location = new System.Drawing.Point(70, 169);
+            this.btnCaixa.ForeColor = System.Drawing.Color.SandyBrown;
+            this.btnCaixa.Location = new System.Drawing.Point(70, 281);
             this.btnCaixa.Name = "btnCaixa";
             this.btnCaixa.Size = new System.Drawing.Size(519, 50);
             this.btnCaixa.TabIndex = 3;
@@ -67,13 +67,14 @@
             // 
             this.btnUsuario.BackColor = System.Drawing.Color.Transparent;
             this.btnUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnUsuario.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnUsuario.ForeColor = System.Drawing.Color.SandyBrown;
             this.btnUsuario.Location = new System.Drawing.Point(70, 225);
             this.btnUsuario.Name = "btnUsuario";
             this.btnUsuario.Size = new System.Drawing.Size(519, 50);
             this.btnUsuario.TabIndex = 4;
             this.btnUsuario.Text = "Usuario";
             this.btnUsuario.UseVisualStyleBackColor = false;
+            this.btnUsuario.Click += new System.EventHandler(this.btnUsuario_Click);
             // 
             // lblOla
             // 
@@ -91,8 +92,8 @@
             // 
             this.btnProdutos.BackColor = System.Drawing.Color.Transparent;
             this.btnProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnProdutos.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.btnProdutos.Location = new System.Drawing.Point(70, 281);
+            this.btnProdutos.ForeColor = System.Drawing.Color.SandyBrown;
+            this.btnProdutos.Location = new System.Drawing.Point(70, 169);
             this.btnProdutos.Name = "btnProdutos";
             this.btnProdutos.Size = new System.Drawing.Size(519, 50);
             this.btnProdutos.TabIndex = 6;
@@ -104,7 +105,8 @@
             this.btnComandas.BackColor = System.Drawing.Color.Transparent;
             this.btnComandas.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnComandas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnComandas.ForeColor = System.Drawing.Color.SaddleBrown;
+            this.btnComandas.ForeColor = System.Drawing.Color.SandyBrown;
+            this.btnComandas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnComandas.Location = new System.Drawing.Point(70, 113);
             this.btnComandas.Name = "btnComandas";
             this.btnComandas.Size = new System.Drawing.Size(519, 50);

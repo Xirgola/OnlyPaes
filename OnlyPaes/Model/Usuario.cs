@@ -1,4 +1,5 @@
-﻿using MySqlConnector;
+﻿using EasyEncryption;
+using MySqlConnector;
 using System;
 using System.CodeDom;
 using System.Collections.Generic;
@@ -6,6 +7,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace OnlyPaes.Model
 {
@@ -42,6 +44,65 @@ namespace OnlyPaes.Model
             tabela.Load(cmd.ExecuteReader());
             conexaoBD.Desconectar(con);
             return tabela;
+        }
+
+
+        public DataTable Listar()
+        {
+            string comando = "SELECT id, nome_completo, email FROM usuarios";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Prepare();
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
+        public bool Cadastrar()
+        {
+            MessageBox.Show("Usuario cadastrado com sucesso!", "Chave!!",
+                       MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            string comando = "INSERT INTO usuarios (nome_completo, email, senha) VALUES " +
+                "(@nome_completo, @email, @senha)";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@nome_completo", NomeCompleto);
+            cmd.Parameters.AddWithValue("@email", Email);
+     
+            // Obter o hash da senha:
+            string hashsenha = EasyEncryption.SHA.ComputeSHA256Hash(senha);
+            
+
+            // Substituir os caracteres coringad (@)
+            cmd.Parameters.AddWithValue("@senha", hashsenha);
+    
+            // Obs.: Certifique-se de utilizar alguma método para obter o hash da senha antes de cadastrar!
+            cmd.Prepare();
+            // O trecho abaixo irá retornar true caso o cadastro dê certo:
+            // Em caso de erro, experimente comentar o try/catch e executar novamente o código;
+            // Grande parte dos problemas estão associados à um comando SQL incorreto. Verifique a string comando.
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
         }
     }
 
