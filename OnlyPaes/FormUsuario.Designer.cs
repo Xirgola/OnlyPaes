@@ -31,13 +31,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.dgvUsuarios = new System.Windows.Forms.DataGridView();
             this.grbCadastro = new System.Windows.Forms.GroupBox();
-            this.lblNomeCadastro = new System.Windows.Forms.Label();
-            this.lblEmailCadastro = new System.Windows.Forms.Label();
-            this.lblSenhaCadastro = new System.Windows.Forms.Label();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.txbNomeCadastro = new System.Windows.Forms.TextBox();
-            this.txbEmailCadastro = new System.Windows.Forms.TextBox();
             this.txbSenhaCadastro = new System.Windows.Forms.TextBox();
+            this.txbEmailCadastro = new System.Windows.Forms.TextBox();
+            this.txbNomeCadastro = new System.Windows.Forms.TextBox();
+            this.btnCadastrar = new System.Windows.Forms.Button();
+            this.lblSenhaCadastro = new System.Windows.Forms.Label();
+            this.lblEmailCadastro = new System.Windows.Forms.Label();
+            this.lblNomeCadastro = new System.Windows.Forms.Label();
             this.grbEditar = new System.Windows.Forms.GroupBox();
             this.txbSenhaEditar = new System.Windows.Forms.TextBox();
             this.txbEmailEditar = new System.Windows.Forms.TextBox();
@@ -47,8 +47,8 @@
             this.lblEmailEditar = new System.Windows.Forms.Label();
             this.lblNomeEditar = new System.Windows.Forms.Label();
             this.grbApagar = new System.Windows.Forms.GroupBox();
-            this.lblApagar = new System.Windows.Forms.Label();
             this.btnApagar = new System.Windows.Forms.Button();
+            this.lblApagar = new System.Windows.Forms.Label();
             this.ptbFoto = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
@@ -67,11 +67,12 @@
             this.dgvUsuarios.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUsuarios.Location = new System.Drawing.Point(49, 13);
-            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvUsuarios.Margin = new System.Windows.Forms.Padding(4);
             this.dgvUsuarios.Name = "dgvUsuarios";
             this.dgvUsuarios.ReadOnly = true;
             this.dgvUsuarios.Size = new System.Drawing.Size(532, 280);
             this.dgvUsuarios.TabIndex = 0;
+            this.dgvUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvUsuarios_CellClick);
             // 
             // grbCadastro
             // 
@@ -83,35 +84,50 @@
             this.grbCadastro.Controls.Add(this.lblEmailCadastro);
             this.grbCadastro.Controls.Add(this.lblNomeCadastro);
             this.grbCadastro.Location = new System.Drawing.Point(49, 318);
-            this.grbCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbCadastro.Margin = new System.Windows.Forms.Padding(4);
             this.grbCadastro.Name = "grbCadastro";
-            this.grbCadastro.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbCadastro.Padding = new System.Windows.Forms.Padding(4);
             this.grbCadastro.Size = new System.Drawing.Size(349, 206);
             this.grbCadastro.TabIndex = 1;
             this.grbCadastro.TabStop = false;
             this.grbCadastro.Text = "Cadastro";
             // 
-            // lblNomeCadastro
+            // txbSenhaCadastro
             // 
-            this.lblNomeCadastro.AutoSize = true;
-            this.lblNomeCadastro.Font = new System.Drawing.Font("Mongolian Baiti", 11F);
-            this.lblNomeCadastro.Location = new System.Drawing.Point(5, 24);
-            this.lblNomeCadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblNomeCadastro.Name = "lblNomeCadastro";
-            this.lblNomeCadastro.Size = new System.Drawing.Size(114, 16);
-            this.lblNomeCadastro.TabIndex = 0;
-            this.lblNomeCadastro.Text = "Nome Completo:";
+            this.txbSenhaCadastro.Location = new System.Drawing.Point(122, 88);
+            this.txbSenhaCadastro.Margin = new System.Windows.Forms.Padding(4);
+            this.txbSenhaCadastro.Name = "txbSenhaCadastro";
+            this.txbSenhaCadastro.Size = new System.Drawing.Size(163, 22);
+            this.txbSenhaCadastro.TabIndex = 6;
             // 
-            // lblEmailCadastro
+            // txbEmailCadastro
             // 
-            this.lblEmailCadastro.AutoSize = true;
-            this.lblEmailCadastro.Font = new System.Drawing.Font("Mongolian Baiti", 11F);
-            this.lblEmailCadastro.Location = new System.Drawing.Point(70, 56);
-            this.lblEmailCadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEmailCadastro.Name = "lblEmailCadastro";
-            this.lblEmailCadastro.Size = new System.Drawing.Size(47, 16);
-            this.lblEmailCadastro.TabIndex = 1;
-            this.lblEmailCadastro.Text = "Email:";
+            this.txbEmailCadastro.Location = new System.Drawing.Point(122, 56);
+            this.txbEmailCadastro.Margin = new System.Windows.Forms.Padding(4);
+            this.txbEmailCadastro.Name = "txbEmailCadastro";
+            this.txbEmailCadastro.Size = new System.Drawing.Size(163, 22);
+            this.txbEmailCadastro.TabIndex = 5;
+            // 
+            // txbNomeCadastro
+            // 
+            this.txbNomeCadastro.Location = new System.Drawing.Point(122, 20);
+            this.txbNomeCadastro.Margin = new System.Windows.Forms.Padding(4);
+            this.txbNomeCadastro.Name = "txbNomeCadastro";
+            this.txbNomeCadastro.Size = new System.Drawing.Size(163, 22);
+            this.txbNomeCadastro.TabIndex = 4;
+            // 
+            // btnCadastrar
+            // 
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCadastrar.Location = new System.Drawing.Point(41, 127);
+            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(267, 60);
+            this.btnCadastrar.TabIndex = 3;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.UseVisualStyleBackColor = true;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
             // 
             // lblSenhaCadastro
             // 
@@ -124,42 +140,27 @@
             this.lblSenhaCadastro.TabIndex = 2;
             this.lblSenhaCadastro.Text = "Senha:";
             // 
-            // btnCadastrar
+            // lblEmailCadastro
             // 
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Mongolian Baiti", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCadastrar.Location = new System.Drawing.Point(41, 127);
-            this.btnCadastrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(267, 60);
-            this.btnCadastrar.TabIndex = 3;
-            this.btnCadastrar.Text = "Cadastrar";
-            this.btnCadastrar.UseVisualStyleBackColor = true;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            this.lblEmailCadastro.AutoSize = true;
+            this.lblEmailCadastro.Font = new System.Drawing.Font("Mongolian Baiti", 11F);
+            this.lblEmailCadastro.Location = new System.Drawing.Point(70, 56);
+            this.lblEmailCadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEmailCadastro.Name = "lblEmailCadastro";
+            this.lblEmailCadastro.Size = new System.Drawing.Size(47, 16);
+            this.lblEmailCadastro.TabIndex = 1;
+            this.lblEmailCadastro.Text = "Email:";
             // 
-            // txbNomeCadastro
+            // lblNomeCadastro
             // 
-            this.txbNomeCadastro.Location = new System.Drawing.Point(122, 20);
-            this.txbNomeCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txbNomeCadastro.Name = "txbNomeCadastro";
-            this.txbNomeCadastro.Size = new System.Drawing.Size(163, 22);
-            this.txbNomeCadastro.TabIndex = 4;
-            // 
-            // txbEmailCadastro
-            // 
-            this.txbEmailCadastro.Location = new System.Drawing.Point(122, 56);
-            this.txbEmailCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txbEmailCadastro.Name = "txbEmailCadastro";
-            this.txbEmailCadastro.Size = new System.Drawing.Size(163, 22);
-            this.txbEmailCadastro.TabIndex = 5;
-            // 
-            // txbSenhaCadastro
-            // 
-            this.txbSenhaCadastro.Location = new System.Drawing.Point(122, 88);
-            this.txbSenhaCadastro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txbSenhaCadastro.Name = "txbSenhaCadastro";
-            this.txbSenhaCadastro.Size = new System.Drawing.Size(163, 22);
-            this.txbSenhaCadastro.TabIndex = 6;
+            this.lblNomeCadastro.AutoSize = true;
+            this.lblNomeCadastro.Font = new System.Drawing.Font("Mongolian Baiti", 11F);
+            this.lblNomeCadastro.Location = new System.Drawing.Point(5, 24);
+            this.lblNomeCadastro.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNomeCadastro.Name = "lblNomeCadastro";
+            this.lblNomeCadastro.Size = new System.Drawing.Size(114, 16);
+            this.lblNomeCadastro.TabIndex = 0;
+            this.lblNomeCadastro.Text = "Nome Completo:";
             // 
             // grbEditar
             // 
@@ -172,9 +173,9 @@
             this.grbEditar.Controls.Add(this.lblNomeEditar);
             this.grbEditar.Enabled = false;
             this.grbEditar.Location = new System.Drawing.Point(523, 318);
-            this.grbEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbEditar.Margin = new System.Windows.Forms.Padding(4);
             this.grbEditar.Name = "grbEditar";
-            this.grbEditar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbEditar.Padding = new System.Windows.Forms.Padding(4);
             this.grbEditar.Size = new System.Drawing.Size(349, 206);
             this.grbEditar.TabIndex = 2;
             this.grbEditar.TabStop = false;
@@ -183,7 +184,7 @@
             // txbSenhaEditar
             // 
             this.txbSenhaEditar.Location = new System.Drawing.Point(122, 88);
-            this.txbSenhaEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbSenhaEditar.Margin = new System.Windows.Forms.Padding(4);
             this.txbSenhaEditar.Name = "txbSenhaEditar";
             this.txbSenhaEditar.Size = new System.Drawing.Size(163, 22);
             this.txbSenhaEditar.TabIndex = 6;
@@ -191,7 +192,7 @@
             // txbEmailEditar
             // 
             this.txbEmailEditar.Location = new System.Drawing.Point(122, 56);
-            this.txbEmailEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbEmailEditar.Margin = new System.Windows.Forms.Padding(4);
             this.txbEmailEditar.Name = "txbEmailEditar";
             this.txbEmailEditar.Size = new System.Drawing.Size(164, 22);
             this.txbEmailEditar.TabIndex = 5;
@@ -199,7 +200,7 @@
             // txbNomeEditar
             // 
             this.txbNomeEditar.Location = new System.Drawing.Point(122, 20);
-            this.txbNomeEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txbNomeEditar.Margin = new System.Windows.Forms.Padding(4);
             this.txbNomeEditar.Name = "txbNomeEditar";
             this.txbNomeEditar.Size = new System.Drawing.Size(163, 22);
             this.txbNomeEditar.TabIndex = 4;
@@ -209,12 +210,13 @@
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Mongolian Baiti", 12F);
             this.btnEditar.Location = new System.Drawing.Point(41, 127);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(267, 60);
             this.btnEditar.TabIndex = 3;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // lblSenhaEditar
             // 
@@ -255,13 +257,28 @@
             this.grbApagar.Controls.Add(this.lblApagar);
             this.grbApagar.Enabled = false;
             this.grbApagar.Location = new System.Drawing.Point(49, 531);
-            this.grbApagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbApagar.Margin = new System.Windows.Forms.Padding(4);
             this.grbApagar.Name = "grbApagar";
-            this.grbApagar.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.grbApagar.Padding = new System.Windows.Forms.Padding(4);
             this.grbApagar.Size = new System.Drawing.Size(822, 74);
             this.grbApagar.TabIndex = 3;
             this.grbApagar.TabStop = false;
             this.grbApagar.Text = "Apagar";
+            // 
+            // btnApagar
+            // 
+            this.btnApagar.BackColor = System.Drawing.Color.Transparent;
+            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnApagar.ForeColor = System.Drawing.Color.Red;
+            this.btnApagar.Location = new System.Drawing.Point(583, 18);
+            this.btnApagar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnApagar.Name = "btnApagar";
+            this.btnApagar.Size = new System.Drawing.Size(214, 47);
+            this.btnApagar.TabIndex = 1;
+            this.btnApagar.Text = "Apagar";
+            this.btnApagar.UseVisualStyleBackColor = false;
+            this.btnApagar.Click += new System.EventHandler(this.btnApagar_Click);
             // 
             // lblApagar
             // 
@@ -273,20 +290,6 @@
             this.lblApagar.Size = new System.Drawing.Size(300, 23);
             this.lblApagar.TabIndex = 0;
             this.lblApagar.Text = "Selecione um usuario para apagar:";
-            // 
-            // btnApagar
-            // 
-            this.btnApagar.BackColor = System.Drawing.Color.Transparent;
-            this.btnApagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnApagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnApagar.ForeColor = System.Drawing.Color.Red;
-            this.btnApagar.Location = new System.Drawing.Point(583, 18);
-            this.btnApagar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnApagar.Name = "btnApagar";
-            this.btnApagar.Size = new System.Drawing.Size(214, 47);
-            this.btnApagar.TabIndex = 1;
-            this.btnApagar.Text = "Apagar";
-            this.btnApagar.UseVisualStyleBackColor = false;
             // 
             // ptbFoto
             // 
@@ -326,7 +329,7 @@
             this.Controls.Add(this.dgvUsuarios);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "FormUsuario";
