@@ -12,9 +12,27 @@ namespace OnlyPaes
 {
     public partial class FormProdutos : Form
     {
-        public FormProdutos()
+        Model.Usuario usuario;
+        public FormProdutos(Model.Usuario usuario)
         {
             InitializeComponent();
+            this.usuario = usuario;
+        }
+        public void ListaCategoriasCmb()
+        {
+            Model.Categoria categoria = new Model.Categoria();
+            // Tabela para receber o resultado do SELEC:
+            DataTable tabela = categoria.Listar();
+
+            foreach (DataRow dr in tabela.Rows)
+            {
+                // 1 - Salgados
+                // 2 - Bebidas
+                cmbCategoriaCadastro.Items.Add($"{dr["dr"]} - {dr["nome"]}");
+                cmbCategoriaEditar.Items.Add($"{dr["dr"]} - {dr["nome"]}");
+            }
+
+
         }
     }
 }

@@ -24,13 +24,26 @@ namespace OnlyPaes
 
         private void btnComandas_Click(object sender, EventArgs e)
         {
-
+            FormComandas formcomandas = new FormComandas(usuario);
+            formcomandas.ShowDialog();
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             FormUsuario formUsuario = new FormUsuario(usuario);
             formUsuario.ShowDialog(); // Mostrar o form
+        }
+
+        private void btnProdutos_Click(object sender, EventArgs e)
+        {
+            FormProdutos formProdutos = new FormProdutos(usuario);
+            formProdutos.ShowDialog();
+        }
+
+        private void btnCaixa_Click(object sender, EventArgs e)
+        {
+            FormCaixa formCaixa = new FormCaixa(usuario);
+            formCaixa.ShowDialog();
         }
     }
 }

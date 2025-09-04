@@ -49,8 +49,8 @@
             this.grbApagar = new System.Windows.Forms.GroupBox();
             this.btnApagar = new System.Windows.Forms.Button();
             this.lblApagar = new System.Windows.Forms.Label();
-            this.ptbFoto = new System.Windows.Forms.PictureBox();
             this.lblTitulo = new System.Windows.Forms.Label();
+            this.ptbFoto = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvUsuarios)).BeginInit();
             this.grbCadastro.SuspendLayout();
             this.grbEditar.SuspendLayout();
@@ -291,17 +291,6 @@
             this.lblApagar.TabIndex = 0;
             this.lblApagar.Text = "Selecione um usuario para apagar:";
             // 
-            // ptbFoto
-            // 
-            this.ptbFoto.BackColor = System.Drawing.Color.Transparent;
-            this.ptbFoto.Image = global::OnlyPaes.Properties.Resources.ChatGPT_Image_27_de_ago__de_2025__21_52_05;
-            this.ptbFoto.Location = new System.Drawing.Point(602, 72);
-            this.ptbFoto.Name = "ptbFoto";
-            this.ptbFoto.Size = new System.Drawing.Size(285, 208);
-            this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ptbFoto.TabIndex = 4;
-            this.ptbFoto.TabStop = false;
-            // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
@@ -313,13 +302,23 @@
             this.lblTitulo.TabIndex = 5;
             this.lblTitulo.Text = "Gerenciador de usuarios";
             // 
+            // ptbFoto
+            // 
+            this.ptbFoto.BackColor = System.Drawing.Color.Transparent;
+            this.ptbFoto.Image = global::OnlyPaes.Properties.Resources.ChatGPT_Image_27_de_ago__de_2025__21_52_05;
+            this.ptbFoto.Location = new System.Drawing.Point(602, 72);
+            this.ptbFoto.Name = "ptbFoto";
+            this.ptbFoto.Size = new System.Drawing.Size(285, 208);
+            this.ptbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ptbFoto.TabIndex = 4;
+            this.ptbFoto.TabStop = false;
+            // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(228)))), ((int)(((byte)(217)))), ((int)(((byte)(198)))));
-            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(899, 626);
             this.Controls.Add(this.lblTitulo);
             this.Controls.Add(this.ptbFoto);
@@ -328,6 +327,7 @@
             this.Controls.Add(this.grbCadastro);
             this.Controls.Add(this.dgvUsuarios);
             this.Font = new System.Drawing.Font("Mongolian Baiti", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;

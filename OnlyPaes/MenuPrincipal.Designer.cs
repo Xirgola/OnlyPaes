@@ -62,6 +62,7 @@
             this.btnCaixa.TabIndex = 3;
             this.btnCaixa.Text = "Caixa";
             this.btnCaixa.UseVisualStyleBackColor = false;
+            this.btnCaixa.Click += new System.EventHandler(this.btnCaixa_Click);
             // 
             // btnUsuario
             // 
@@ -99,6 +100,7 @@
             this.btnProdutos.TabIndex = 6;
             this.btnProdutos.Text = "produtos";
             this.btnProdutos.UseVisualStyleBackColor = false;
+            this.btnProdutos.Click += new System.EventHandler(this.btnProdutos_Click);
             // 
             // btnComandas
             // 
