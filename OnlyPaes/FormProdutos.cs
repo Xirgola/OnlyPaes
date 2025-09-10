@@ -16,14 +16,19 @@ namespace OnlyPaes
 {
     public partial class FormProdutos : Form
     {
-        Model.Produto produto;
+        Model.Usuario usuario;
+        Model.Produto produto = new Produto();
+          
         int idSelecionado = 0;
 
 
         public FormProdutos(Model.Usuario usuario)
         {
             InitializeComponent();
-            this.produto = produto;
+            this.usuario = usuario;
+
+            AtualzarDgv();
+            ListaCategoriasCmb();
         }
         public void AtualzarDgv()
         {
@@ -40,8 +45,8 @@ namespace OnlyPaes
             {
                 // 1 - Salgados
                 // 2 - Bebidas
-                cmbCategoriaCadastro.Items.Add($"{dr["dr"]} - {dr["nome"]}");
-                cmbCategoriaEditar.Items.Add($"{dr["dr"]} - {dr["nome"]}");
+                cmbCategoriaCadastro.Items.Add($"{dr["id"]} - {dr["nome"]}");
+                cmbCategoriaEditar.Items.Add($"{dr["id"]} - {dr["nome"]}");
             }
 
 
@@ -72,6 +77,8 @@ namespace OnlyPaes
 
                 string produtoSelecionado = cmbCategoriaCadastro.SelectedItem.ToString();
                 string numero_categoria = produtoSelecionado.Split('-')[0].Trim();
+                produtoCadastro.IdCategoria = int.Parse(numero_categoria);
+                produtoCadastro.IdRespCadastro = usuario.Id;
 
 
                 // Executar o INSERT:
@@ -102,9 +109,9 @@ namespace OnlyPaes
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            double preco = double.Parse(txbPrecoProduto.Text);
+            double preco = double.Parse(txbPrecoEditar.Text);
 
-            if (txbNomeCadastro.Text.Length < 3)
+            if (txbNomeEditar.Text.Length < 3)
             {
                 MessageBox.Show("O nome do produto dever ter no minimo 3 caracteres.",
                     "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -117,18 +124,20 @@ namespace OnlyPaes
 
             else
             {
-                Model.Produto produtoCadastro = new Model.Produto();
+                Model.Produto produtoEditar = new Model.Produto();
 
                 // Salvar os valotes dos campos nos atributos do obj:
-                produtoCadastro.Nome = txbNomeCadastro.Text;
-                produtoCadastro.Preco = preco;
+                produtoEditar.Nome = txbNomeEditar.Text;
+                produtoEditar.Preco = preco;
 
-                string produtoSelecionado = cmbCategoriaCadastro.SelectedItem.ToString();
+                string produtoSelecionado = cmbCategoriaEditar.SelectedItem.ToString();
                 string numero_categoria = produtoSelecionado.Split('-')[0].Trim();
-
+                produtoEditar.IdCategoria = int.Parse(numero_categoria);
+                produtoEditar.IdRespCadastro = usuario.Id;
+                produtoEditar.Id = idSelecionado;
 
                 // Executar o INSERT:
-                if (produtoCadastro.Cadastrar())
+                if (produtoEditar.Modificar())
                 {
                     MessageBox.Show("Produto Editado com sucesso!", "Chave!!",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -142,7 +151,7 @@ namespace OnlyPaes
                 }
                 else
                 {
-                    MessageBox.Show("Falha ao editar o produti.",
+                    MessageBox.Show("Falha ao editar o produto.",
                         "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }

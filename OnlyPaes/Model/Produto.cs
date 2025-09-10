@@ -36,7 +36,7 @@ namespace OnlyPaes.Model
             MessageBox.Show("Produto cadastrado com sucesso!", "Chave!!",
                        MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            string comando = "INSERT INTO produto (nome, preco, id_categoria, id_respcadastro) VALUES " +
+            string comando = "INSERT INTO produtos (nome, preco, id_categoria, id_respcadastro) VALUES " +
                 "(@nome, @preco, @id_categoria, @id_respcadastro)";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
@@ -97,7 +97,7 @@ namespace OnlyPaes.Model
         public bool Modificar()
         {
             string comando = "UPDATE produtos SET nome = @nome, " +
-                "preco = @preco, id_categoria =@id_categoria,id_respcadastro = @id_respcadastro, = @senha WHERE id = @id";
+                "preco = @preco, id_categoria =@id_categoria,id_respcadastro = @id_respcadastro WHERE id = @id";
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
