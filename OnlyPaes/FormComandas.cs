@@ -80,7 +80,7 @@ namespace OnlyPaes
                 if (ordemComanda.Cadastrar())
                 {
                     MessageBox.Show("Lançamento efetuado", "Sucesso",
-                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
                     ResetarCampos();
                 }
                 else
