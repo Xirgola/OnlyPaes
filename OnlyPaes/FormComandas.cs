@@ -34,6 +34,8 @@ namespace OnlyPaes
             txbCodProdutoInfo.Text = dgvProdutos.Rows[ls].Cells[0].Value.ToString();
             // Colocar o nome do produto no campo de informações
             txbProduto.Text = dgvProdutos.Rows[ls].Cells[1].Value.ToString();
+
+            ResetarCampos();
         }
 
         private void btnContinuar_Click(object sender, EventArgs e)

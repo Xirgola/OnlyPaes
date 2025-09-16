@@ -10,7 +10,7 @@ namespace OnlyPaes.Model
 {
     public class OrdemComanda
     {
-        public int Id {  get; set; }
+        public int Id { get; set; }
         public int IdFicha { get; set; }
         public int IdProduto { get; set; }
         public int Quantidade { get; set; }
@@ -25,6 +25,21 @@ namespace OnlyPaes.Model
             Banco conexaoBD = new Banco();
             MySqlConnection con = conexaoBD.ObterConexao();
             MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Prepare();
+            DataTable tabela = new DataTable();
+            tabela.Load(cmd.ExecuteReader());
+            conexaoBD.Desconectar(con);
+            return tabela;
+        }
+        public DataTable BuscarFichas()
+        {
+            string comando = "SELECT * FROM view_fichas WHERE Ficha = @idFicha ";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+
+            cmd.Parameters.AddWithValue("@idFicha", IdFicha);
+
             cmd.Prepare();
             DataTable tabela = new DataTable();
             tabela.Load(cmd.ExecuteReader());
@@ -64,6 +79,36 @@ namespace OnlyPaes.Model
                 conexaoBD.Desconectar(con);
                 return false;
             }
+
+        }
+        public bool EncerrarComanda()
+        {
+            string comando = "UPDATE oredens_comandas SET situacao = 0" + 
+                "WHERE id_ficha = @id_ficha AND situacao = 1";
+            Banco conexaoBD = new Banco();
+            MySqlConnection con = conexaoBD.ObterConexao();
+            MySqlCommand cmd = new MySqlCommand(comando, con);
+            cmd.Parameters.AddWithValue("@id_ficha", IdFicha);
+            cmd.Prepare();
+            try
+            {
+                if (cmd.ExecuteNonQuery() == 0)
+                {
+                    conexaoBD.Desconectar(con);
+                    return false;
+                }
+                else
+                {
+                    conexaoBD.Desconectar(con);
+                    return true;
+                }
+            }
+            catch
+            {
+                conexaoBD.Desconectar(con);
+                return false;
+            }
         }
     }
-}
+}    
+
